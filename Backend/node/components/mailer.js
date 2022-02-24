@@ -13,7 +13,7 @@ const transport = {
 }
 
 const defaults = {
-    from: 'body.req.email',
+    from: 'body.req.email' + ' ' + 'body.req.name',
 }
 
 export const email = () => ({
@@ -31,3 +31,5 @@ export const mailer = Mailer(
 mailer.send('email', {
     to: 'afcplushies@gmail.com'
 })
+
+module.exports = { Mailer };
